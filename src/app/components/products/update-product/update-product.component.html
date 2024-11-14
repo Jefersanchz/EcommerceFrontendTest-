@@ -1,0 +1,77 @@
+<div #modalContainer tabindex="-1" class="modal-content">
+  <form [formGroup]="productForm">
+    <div class="modal-header">
+      <h4 class="modal-title">Actualizar Producto</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="cancel()"></button>
+    </div>
+    <div class="modal-body">
+      <div class="mb-3">
+        <label for="name" class="form-label">Nombre Producto</label>
+        <input type="text" 
+               class="form-control" 
+               id="name" 
+               placeholder="Enter product name" 
+               formControlName="name" 
+               required>
+        
+        <div *ngIf="productForm.get('name')?.invalid && (productForm.get('name')?.dirty || productForm.get('name')?.touched)" class="text-danger">
+          <small *ngIf="productForm.get('name')?.errors?.['required']">
+            Nombre es requerido.
+          </small>
+          <small *ngIf="productForm.get('name')?.errors?.['maxlength']">Maximo permitido de caracteres 300.</small>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Descripción del producto</label>
+        <input type="text" 
+               class="form-control" 
+               id="description" 
+               placeholder="Enter product description" 
+               formControlName="description" 
+               required>
+        
+        <div *ngIf="productForm.get('description')?.invalid && (productForm.get('description')?.dirty || productForm.get('description')?.touched)" class="text-danger">
+          <small *ngIf="productForm.get('description')?.errors?.['required']">
+            Descripcion es requerido.
+          </small>
+          <small *ngIf="productForm.get('description')?.errors?.['maxlength']">Maximo de caracteres permitidos 500.</small>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" 
+               class="form-control" 
+               id="price" 
+               placeholder="Enter product price" 
+               formControlName="price" 
+               required>
+        
+        <div *ngIf="productForm.get('price')?.invalid && (productForm.get('price')?.dirty || productForm.get('price')?.touched)" class="text-danger">
+          <small *ngIf="productForm.get('price')?.errors?.['required']">Precio is requerido.</small>
+          <small *ngIf="productForm.get('price')?.errors?.['min']">Precio tiene que ser mayor que 0.</small>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity</label>
+        <input type="number" 
+               class="form-control" 
+               id="quantity" 
+               placeholder="Enter product quantity" 
+               formControlName="quantity" 
+               required>
+        
+        <div *ngIf="productForm.get('quantity')?.invalid && (productForm.get('quantity')?.dirty || productForm.get('quantity')?.touched)" class="text-danger">
+          <small *ngIf="productForm.get('quantity')?.errors?.['required']">Cantidad es requerida.</small>
+          <small *ngIf="productForm.get('quantity')?.errors?.['min']">Cantidad tiene que ser mauyor que 0.</small>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-cancel" (click)="cancel()">Cancelar</button>
+      <button type="button" class="btn btn-save" (click)="save()" [disabled]="productForm.invalid">Guardar</button>
+    </div>
+  </form>
+</div>

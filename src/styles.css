@@ -1,0 +1,12 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-image: url('assets/background.png');
+    background-size: 100%; /* Ajusta el tamaño */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:  top center; 
+    background-color: hwb(210 97% 2%);/* Posiciona la imagen */
+  }
+  

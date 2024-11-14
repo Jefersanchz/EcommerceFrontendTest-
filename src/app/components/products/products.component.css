@@ -1,0 +1,195 @@
+
+/* Título principal */
+/* Título principal */
+h1 {
+  color: #FFFFFF; /* Cambiar a blanco puro */
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Sombra sutil para mejorar la legibilidad */
+}
+
+/* Contenedor principal transparente */
+.container-fluid {
+  background-color: transparent;
+  padding: 0.2rem; /* Reducir padding para un ajuste más compacto */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 0.2rem; /* Reducir margen superior */
+}
+
+/* Botón de agregar producto */
+.btn-agregar {
+  width: 170px;
+  height: 44px;
+  background-color: #34d190; /* Color violeta para contraste */
+  color: #FFFFFF;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-agregar:hover {
+  background-color: #5a52d6; /* Color un poco más oscuro en hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Campo de búsqueda */
+.form-control {
+  display: flex;
+  align-items: center;
+  border-radius: 4rem;
+  border: 1px solid #cfd8dc;
+  width: 100%;
+  height: 50px; /* Reducir altura para ahorrar espacio */
+  justify-content: space-between;
+  padding: 0 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  color: #495057;
+  margin-bottom: 0.2rem; /* Reducir margen inferior del campo de búsqueda */
+}
+
+/* Tabla */
+.table-responsive {
+  margin-top: 0.2rem; /* Reducir el margen superior de la tabla */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table th, .table td {
+  padding: 16px;
+  text-align: center;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.table th {
+  background-color: #14e20d; /* Fondo gris oscuro */
+  color: #fff; /* Texto claro para contraste */
+  font-weight: bold;
+}
+
+.table td {
+  background-color: #f9f9f9; /* Fondo blanco suave */
+}
+
+.table td:hover {
+  background-color: #e2e3e5; /* Efecto de hover suave */
+}
+
+/* Iconos y texto de acción */
+.table .accion {
+  color: #6c63ff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.table .accion:hover {
+  color: #5a52d6;
+}
+
+/* Ajustes de input */
+input {
+  outline: none;
+  width: 100%;
+}
+.sticky-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #14e20d; /* Color del encabezado pegajoso */
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+/* Estilos existentes */
+.btn-agregar {
+  background-color: #005CBB;
+  color: white;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-agregar:hover {
+  background-color: #00408a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Nuevos estilos para el botón de órdenes */
+.btn-orders {
+  background-color: #D8E2FF;
+  color: #004884;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.btn-orders:hover {
+  background-color: #ccddec;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gap-3 {
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .d-flex.justify-content-end {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .btn-orders,
+  .btn-agregar {
+    width: 100%;
+    justify-content: center;
+  }
+}
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.bi-box-arrow-right {
+  font-size: 1.1rem;
+}

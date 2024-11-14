@@ -1,0 +1,63 @@
+<div class="container mt-4">
+  <h1 class="text-center mb-4">Gestionar Pedidos</h1>
+
+  <div class="row mb-4">
+      <div class="col-12">
+          <h3>Catalogo de productos</h3>
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>Nombre</th>
+                      <th>Descripcion</th>
+                      <th>Precio</th>
+                      <th>Cantidad</th>
+                      <th>Acción</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let product of products">
+                      <td>{{ product.name }}</td>
+                      <td>{{ product.description }}</td>
+                      <td>{{ product.price | currency }}</td>
+                      <td>
+                          <input type="number" class="form-control" [(ngModel)]="selectedQuantities[product.id]" placeholder="Enter quantity" min="1">
+                      </td>
+                      <td>
+                          <button class="btn btn-success" (click)="placeOrder(product)">Realizar pedido</button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-12">
+          <h3>Pedidos Realizados</h3>
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>Producto</th>
+                      <th>Cantidad</th>
+                      <th>Total</th>
+                      <th>Fecha</th>
+                      <th>Accion</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let order of orders">
+                      <td>{{ order.id }}</td>
+                      <td>{{ order.product.name }}</td>
+                      <td>{{ order.quantity }}</td>
+                      <td>{{ order.total | currency }}</td>
+                      <td>{{ order.date | date: 'short' }}</td>
+                      <td>
+                          <button class="btn btn-danger" (click)="deleteOrder(order.id)">Delete</button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="register-box">
+  <div class="logo-header">
+    <img src="/assets/inscribirse_.gif" alt="Logo de Punto de Pago Air" class="logo-image" />
+  </div>
+  <h2>Registro de Usuario</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+    <div class="user-box">
+      <input type="text" formControlName="firstName" required />
+      <label>Nombre</label>
+    </div>
+    <div class="user-box">
+      <input type="text" formControlName="lastName" required />
+      <label>Apellido</label>
+    </div>
+    <div class="user-box">
+      <input type="text" formControlName="username" required />
+      <label>Usuario</label>
+    </div>
+    <div class="user-box">
+      <input type="password" formControlName="password" required />
+      <label>Contraseña</label>
+    </div>
+    <button type="submit" class="btn" [disabled]="registerForm.invalid">Registrar</button>
+  </form>
+</div>

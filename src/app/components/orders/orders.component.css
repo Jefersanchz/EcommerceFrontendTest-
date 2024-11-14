@@ -1,0 +1,156 @@
+/* Fondo general */
+body {
+    background-color: #2b2d42; /* Fondo morado oscuro */
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor sin fondo */
+.container {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos de encabezado */
+h1 {
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h3 {
+    color: #fcfdfc; /* Verde suave para subtítulos */
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Tabla */
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.table thead th {
+    background-color: #14e20d; /* Verde suave para el encabezado */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+}
+
+.table tbody td {
+    padding: 12px;
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: rgba(236, 240, 241, 0.5); /* Fondo semitransparente */
+}
+
+.table tbody tr:hover {
+    background-color: rgba(223, 240, 216, 0.5); /* Fondo semitransparente en hover */
+}
+
+/* Campo de cantidad */
+input[type="number"] {
+    width: 80px;
+    padding: 6px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+    transition: all 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+    outline: none;
+}
+
+/* Botones */
+.btn {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-success {
+    background-color: #4CAF50; /* Verde para botón de acción */
+    color: white;
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.2);
+}
+
+.btn-success:hover {
+    background-color: #66BB6A; /* Verde más claro al hacer hover */
+    box-shadow: 0 8px 16px rgba(76, 175, 80, 0.4);
+}
+
+.btn-danger {
+    background-color: #E57373; /* Rojo suave */
+    color: white;
+    box-shadow: 0 4px 8px rgba(229, 115, 115, 0.2);
+}
+
+.btn-danger:hover {
+    background-color: #EF5350; /* Rojo más intenso en hover */
+    box-shadow: 0 8px 16px rgba(239, 83, 80, 0.4);
+}
+
+tbody tr td button {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilos responsivos para tablas */
+@media (max-width: 768px) {
+    .table thead, .table tbody, .table th, .table td, .table tr {
+        display: block;
+    }
+    
+    .table thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .table tr {
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+    }
+    
+    .table td {
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+    }
+    
+    .table td:before {
+        position: absolute;
+        top: 12px;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #4CAF50;
+    }
+    
+    .table td:nth-of-type(1):before { content: "Nombre"; }
+    .table td:nth-of-type(2):before { content: "Descripción"; }
+    .table td:nth-of-type(3):before { content: "Precio"; }
+    .table td:nth-of-type(4):before { content: "Cantidad"; }
+    .table td:nth-of-type(5):before { content: "Acción"; }
+}
