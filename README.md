@@ -1,27 +1,60 @@
+
 # Ecommerce
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) versión 17.2.3.
 
-## Development server
+## Requisitos Previos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. **Node.js y npm**: Asegúrate de tener [Node.js](https://nodejs.org/) y npm instalados.
+2. **Angular CLI**: Instala Angular CLI globalmente usando:
+   ```bash
+   npm install -g @angular/cli
+   ```
+3. **Configuración del Backend**: La API debe estar corriendo en un servidor. En este caso, la API está desplegada en una instancia EC2 en AWS.
 
-## Code scaffolding
+## Instalación
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ejecuta el siguiente comando en la raíz del proyecto para instalar las dependencias necesarias:
 
-## Build
+```bash
+npm install
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Servidor de Desarrollo (Frontend)
 
-## Running unit tests
+Ejecuta `ng serve` para iniciar un servidor de desarrollo. Navega a `http://localhost:4200/` en tu navegador. La aplicación se recargará automáticamente al detectar cambios en los archivos fuente.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+ng serve
+```
+## Base de Datos (RDS en AWS)
 
-## Running end-to-end tests
+La base de datos se encuentra alojada en Amazon RDS. Asegúrate de configurar las variables de entorno para que el backend se conecte correctamente a esta base de datos.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Despliegue en AWS
 
-## Further help
+### Frontend
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+El frontend está desplegado en un Bucket S3 configurado para alojamiento estático.
+
+### Backend
+
+El backend está ejecutándose en una instancia EC2, utilizando `screen` para mantener el servicio en ejecución.
+
+### Base de Datos
+
+La base de datos utiliza Amazon RDS. Configura el acceso y las variables de entorno necesarias para que el backend pueda conectarse a la base de datos.
+
+## Comandos Útiles
+
+- **ng serve**: Inicia el servidor de desarrollo.
+- **ng build**: Construye el proyecto.
+- **ng test**: Ejecuta pruebas unitarias con Karma.
+- **ng e2e**: Ejecuta pruebas de extremo a extremo.
+
+## Rutas AWS Frontend
+http://ecommercefront.s3-website.us-east-2.amazonaws.com
+
+## Ruta AWS Documentación apis
+http://ec2-18-191-210-163.us-east-2.compute.amazonaws.com:9000/swagger-ui/index.html#
+
