@@ -3,11 +3,12 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { RegisterService } from '../../services/register.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
@@ -27,8 +28,8 @@ export class RegisterComponent {
   registerUser(): void {
     if (this.registerForm.invalid) {
       Swal.fire({
-        title: 'Incomplete Fields',
-        text: 'Please complete all fields before continuing.',
+        title: 'Campos incompletos',
+        text: 'Por favor, completa todos los campos antes de continuar.',
         icon: 'warning',
         confirmButtonText: 'Accept'
       });
@@ -38,8 +39,8 @@ export class RegisterComponent {
     this.registerService.registerUser(this.registerForm.value).subscribe({
       next: (response) => {
         Swal.fire({
-          title: 'Successful Registration',
-          text: 'The user has been successfully registered',
+          title: 'Registro exitoso',
+          text: 'El usuario ha sido registrado exitosamente',
           imageUrl: '/assets/comprar.gif',
           imageWidth: 80,
           imageHeight: 80,
@@ -56,7 +57,7 @@ export class RegisterComponent {
       error: (error) => {
         Swal.fire({
           title: 'Error',
-          text: 'There was a problem registering the user',
+          text: 'Hubo un problema al registrar el usuario',
           icon: 'error',
           confirmButtonText: 'Accept'
         });
